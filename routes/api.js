@@ -22,7 +22,7 @@ module.exports = function (app) {
     else if (!req.body.puzzle.match(/^([1-9\.]+)$/)) return res.json({ error: "Invalid characters in puzzle" });
 
     const solver = new SudokuSolver(req.body.puzzle);
-    if (solver.solve()) res.json({ solution: solver.joinArray() });
+    if (solver.isSolved()) res.json({ solution: solver.joinArray() });
     else res.json({ error: "Puzzle cannot be solved" });
   });
 };

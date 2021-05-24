@@ -86,7 +86,7 @@ suite("UnitTests", () => {
       solver = new Solver(validPuzzles[i][0]);
       assert.deepEqual(solver.validatePuzzle(), 0);
       assert.isArray(solver.puzzleArray);
-      assert.isTrue(solver.solve());
+      assert.isTrue(solver.isSolved());
     }
   });
 
@@ -102,7 +102,7 @@ suite("UnitTests", () => {
       solver = new Solver(validPuzzles[i][0]);
       assert.deepEqual(solver.validatePuzzle(), 0);
       assert.isArray(solver.puzzleArray);
-      assert.isTrue(solver.solve());
+      assert.isTrue(solver.isSolved());
       assert.deepEqual(solver.joinArray(), validPuzzles[i][1]);
     }
   });

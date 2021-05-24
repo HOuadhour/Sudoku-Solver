@@ -187,6 +187,7 @@ class SudokuSolver {
   }
 
   isSolved() {
+    const solvable = this.solve();
     // check if we have all digits in every row
     for (let row = 0; row < 9; row++) {
       const line = this.puzzleArray[row].join("");
@@ -204,7 +205,7 @@ class SudokuSolver {
       if (digits.join("") !== "123456789") return false;
       digits = [];
     }
-    return true;
+    return true && solvable;
   }
 }
 
